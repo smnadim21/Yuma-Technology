@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_mart_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white">
+
+
+    <com.smnadim21.customview.layouts.SquareLayoutW
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/col_1"
+            app:cardElevation="10dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <com.smnadim21.customview.imageview.SquareImageViewH
+                    android:id="@+id/item_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".8"
+                    android:src="@drawable/ic_burgu" />
+
+                <TextView
+                    android:id="@+id/item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:text="No item selected"
+                    android:textColor="@color/grey_900"
+                    android:textSize="20sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/item_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gilroy_regular"
+                    android:gravity="center"
+                    android:text="Select Item to see description"
+                    android:textColor="@color/grey_700"
+                    android:textSize="18sp">
+
+
+                </TextView>
+
+                <LinearLayout
+                    android:id="@+id/ll_admin_only"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="3dp">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5" />
+
+                    <com.smnadim21.customview.imageview.SquareImageViewW
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_print_24"
+                        app:tint="@color/green_900" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/print_orders"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight=".8"
+                        android:gravity="center"
+                        android:background="@color/yellow_100"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:inputType="number"
+                        android:padding="10sp"
+                        android:text="0"
+                        android:textColor="@color/grey_800"
+                        android:textSize="18sp">
+
+
+                    </androidx.appcompat.widget.AppCompatEditText>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bt_patch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:text="Patch!"
+                        android:textColor="@color/col_2" />
+
+
+                    <com.smnadim21.customview.imageview.SquareImageViewW
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_gbp"
+                        app:tint="@color/green_900" />
+
+                    <TextView
+                        android:id="@+id/user_cash"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawablePadding="1dp"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:padding="10sp"
+                        android:text="0"
+                        android:textColor="@color/grey_800"
+                        android:textSize="18sp">
+
+                    </TextView>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </com.smnadim21.customview.layouts.SquareLayoutW>
+</androidx.cardview.widget.CardView>
