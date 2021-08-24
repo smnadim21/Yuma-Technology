@@ -9,6 +9,7 @@ public interface JsonParser {
         String description = "description";
         String properties = "properties";
 
+
         public interface Properties {
             String print_order = "print_order";
         }
@@ -17,6 +18,13 @@ public interface JsonParser {
 
         public interface Price {
             String price = "price";
+        }
+
+        String files = "files";
+        interface Files{
+            String product_uuid = "product_uuid";
+            String file_uuid = "file_uuid";
+
         }
     }
 }

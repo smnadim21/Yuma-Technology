@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -62,6 +63,14 @@
             <include
                 android:id="@+id/product"
                 layout="@layout/item_products" />
+
+            <TextView
+                android:text="RESPONSE FROM SERVER: "
+                android:textSize="13sp"
+                android:fontFamily="@font/fira_mono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp" />
 
             <TextView
                 android:id="@+id/tv_test"

@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.JsonObject;
 import com.smnadim21.nadx.tools.NandX;
 import com.smnadim21.nadx.tools.json.JsonHandler;
@@ -101,6 +102,16 @@ public class HomeActivity extends AppCompatActivity implements JsonParser {
                                 }
                         );
 
+                        try {
+                            Glide.with(HomeActivity.this)
+                                    .load(generateImageUrl(jsonObjects.get(position - 1)))
+                                    .placeholder(R.drawable.ic_burgu)
+                                    .into(binding.product.itemImage);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(HomeActivity.this, "Image URL ERROR", Toast.LENGTH_SHORT).show();
+                        }
+
                         // printing full json
                         binding.tvTest.setText(NandX.getPrettyJson(jsonObjects.get(position - 1).toString()));
                         // print short name
@@ -116,6 +127,8 @@ public class HomeActivity extends AppCompatActivity implements JsonParser {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
+
                     } else {
                         //if no product selected
                         binding.product.btPatch.setOnClickListener(
@@ -135,7 +148,9 @@ public class HomeActivity extends AppCompatActivity implements JsonParser {
         });
 
 
-        binding.llHead.bBack.setOnClickListener(v -> {onBackPressed();});
+        binding.llHead.bBack.setOnClickListener(v -> {
+            onBackPressed();
+        });
 
 
     }
@@ -246,5 +261,10 @@ public class HomeActivity extends AppCompatActivity implements JsonParser {
     //hide progressbar
     protected void hideProgress() {
         binding.llLoading.spinKit.setVisibility(View.GONE);
+    }
+
+    protected String generateImageUrl(JSONObject jobj) throws JSONException {
+        JSONObject fileObj = jobj.getJSONArray(Product.files).getJSONObject(0);
+        return "https://labapi.yuma-technology.co.uk:8443/delivery/product/" + fileObj.optString(Product.Files.product_uuid) + "/file/" + fileObj.optString(Product.Files.file_uuid);
     }
 }
